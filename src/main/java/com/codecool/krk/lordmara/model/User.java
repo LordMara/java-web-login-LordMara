@@ -7,13 +7,6 @@ public class User {
     private String login;
     private String password;
 
-    public User(String name, String surname, String login, String password) {
-        this.name = name;
-        this.surname = surname;
-        this.login = login;
-        this.password = password;
-    }
-
     public User(Integer id, String name, String surname, String login, String password) {
         this.id = id;
         this.name = name;
