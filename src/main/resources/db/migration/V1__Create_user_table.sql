@@ -1,4 +1,3 @@
-BEGIN TRANSACTION;
 CREATE TABLE IF NOT EXISTS `user` (
 	`id`	INTEGER,
 	`name`	TEXT,
@@ -7,4 +6,3 @@ CREATE TABLE IF NOT EXISTS `user` (
 	`password`	TEXT,
 	PRIMARY KEY(`id`)
 );
-COMMIT;
