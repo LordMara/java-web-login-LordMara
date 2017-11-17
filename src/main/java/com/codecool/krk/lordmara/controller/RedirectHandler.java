@@ -10,7 +10,5 @@ public class RedirectHandler implements HttpHandler {
     public void handle(HttpExchange httpExchange) throws IOException {
         httpExchange.getResponseHeaders().set("Location", "/");
         httpExchange.sendResponseHeaders(302,-1);
-
     }
-
 }
