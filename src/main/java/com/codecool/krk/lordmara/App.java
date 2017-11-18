@@ -10,7 +10,7 @@ import java.net.InetSocketAddress;
 public class App
 {
     public static void main(String[] args) throws Exception {
-        DatabaseMigration.migrateDatbase();
+        DatabaseMigration.migrateDatabase();
 
         HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
 
