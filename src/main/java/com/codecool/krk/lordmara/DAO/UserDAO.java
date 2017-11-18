@@ -7,16 +7,14 @@ import java.sql.*;
 public class UserDAO {
     private static final UserDAO INSTANCE = new UserDAO();
 
-    private final String PATH = "jdbc:sqlite:src/main/resources/db/table_reservation_system.db";
-
     public static UserDAO getInstance() {
         return INSTANCE;
     }
 
-    public User getUser(String enteredLogin, String enteredPassword) throws SQLException {
+    public User getUser(String enteredLogin, String enteredPassword) {
         User user = null;
 
-        try (Connection con = DriverManager.getConnection(this.PATH);
+        try (Connection con = DatabaseConnection.getConnection();
         PreparedStatement ps = createPreparedStatement(con, enteredLogin, enteredPassword);
         ResultSet result = ps.executeQuery()) {
 
@@ -27,7 +25,11 @@ public class UserDAO {
 
                 user = new User(id, name, surname, enteredLogin, enteredPassword);
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.exit(0);
         }
+
         return user;
     }
 
