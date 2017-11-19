@@ -34,7 +34,7 @@ public class UserDAO {
     }
 
     private PreparedStatement createPreparedStatement(Connection con, String enteredUserName, String enteredPassword) throws SQLException {
-        String query = "SELECT id, name, surname FROM user WHERE username = ? AND password = ?";
+        String query = "SELECT id, name, surname FROM user WHERE user_name = ? AND password = ?";
 
         PreparedStatement ps = con.prepareStatement(query);
         ps.setString(1, enteredUserName);
