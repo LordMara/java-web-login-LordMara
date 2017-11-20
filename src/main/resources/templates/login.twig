@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        <fieldset>
+            <label id="form-label">Sign in</label>
+            <label>
+                User Name:
+                <input type="text" name="user-name" required>
+            </label>
+
+            <label>
+                Password:
+                <input type="password" name="password" required>
+            </label>
+
+            <button class="login" type="submit" name="login">Log in</button>
+        </fieldset>
+    </form>
+{% endblock %}
