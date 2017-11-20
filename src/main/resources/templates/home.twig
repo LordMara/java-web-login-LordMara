@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+
+{% block title %}{{ name }} {{ surname }}{% endblock %}
+
+{% block content %}
+    <h1>Hello {{ name }} {{ surname }}!</h1>
+
+    <button type="submit" name="logout">Log out</button>
+{% endblock %}
