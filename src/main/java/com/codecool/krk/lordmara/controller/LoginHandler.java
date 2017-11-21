@@ -63,7 +63,7 @@ public class LoginHandler implements HttpHandler {
     }
 
     private void userContent(String cookieStr, HttpExchange httpExchange) throws IOException {
-        Integer userId = usersSessions.get(cookieStr);
+        Integer userId = LoginHandler.usersSessions.get(cookieStr);
 
         User user = UserDAO.getInstance().getUser(userId);
 
