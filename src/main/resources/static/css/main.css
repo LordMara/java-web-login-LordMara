@@ -98,21 +98,6 @@ body {
 
 /*
   ================================================
-  Typography
-  ================================================
-*/
-
-h1 {
-    font-weight: 500;
-    font-size: 50px;
-    line-height: 40px;
-    margin-top: 25%;
-    margin-bottom: 8%;
-    text-align: center
-}
-
-/*
-  ================================================
   Buttons
   ================================================
 */
@@ -177,4 +162,24 @@ input {
     margin-top: -20px;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+
+/*
+  ================================================
+  Content
+  ================================================
+*/
+
+h1 {
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 40px;
+    margin-top: 25%;
+    margin-bottom: 8%;
+    text-align: center
+}
+
+a {
+    text-decoration: none;
 }
