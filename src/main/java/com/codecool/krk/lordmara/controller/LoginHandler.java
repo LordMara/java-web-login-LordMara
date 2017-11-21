@@ -13,7 +13,7 @@ import java.net.URLDecoder;
 import java.util.*;
 
 public class LoginHandler implements HttpHandler {
-    private Map<String, Integer> usersSessions = new HashMap<>();
+    private static Map<String, Integer> usersSessions = new HashMap<>();
 
     @Override
     public void handle(HttpExchange httpExchange) throws IOException {
@@ -21,10 +21,13 @@ public class LoginHandler implements HttpHandler {
 
         if (cookieStr != null) {
             userContent(cookieStr, httpExchange);
-            System.out.println(cookieStr);
         } else {
             login(httpExchange);
         }
+    }
+
+    public static Map<String, Integer> getUsersSessions() {
+        return usersSessions;
     }
 
     private void login(HttpExchange httpExchange) throws IOException {
@@ -78,7 +81,7 @@ public class LoginHandler implements HttpHandler {
     private void createCookie(Integer userId, HttpExchange httpExchange) throws IOException {
         HttpCookie cookie = new HttpCookie("sessionId", UUID.randomUUID().toString());
         httpExchange.getResponseHeaders().add("Set-Cookie", cookie.toString());
-        usersSessions.put(cookie.toString(), userId);
+        LoginHandler.usersSessions.put(cookie.toString(), userId);
     }
 
     private List<String> parseLoginFormData(String formData) throws UnsupportedEncodingException {
