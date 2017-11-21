@@ -2,6 +2,7 @@ package com.codecool.krk.lordmara;
 
 import com.codecool.krk.lordmara.DAO.DatabaseMigration;
 import com.codecool.krk.lordmara.controller.LoginHandler;
+import com.codecool.krk.lordmara.controller.LogoutHandler;
 import com.codecool.krk.lordmara.controller.StaticHandler;
 
 import com.sun.net.httpserver.HttpServer;
@@ -16,7 +17,7 @@ public class App {
 
         server.createContext("/login", new LoginHandler());
         server.createContext("/static", new StaticHandler());
-//        server.createContext("/logout", new LogoutHandler());
+        server.createContext("/logout", new LogoutHandler());
         server.setExecutor(null);
 
         server.start();
