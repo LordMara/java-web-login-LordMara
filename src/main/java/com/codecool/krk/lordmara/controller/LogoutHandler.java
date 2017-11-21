@@ -8,6 +8,9 @@ import java.io.IOException;
 public class LogoutHandler implements HttpHandler {
     @Override
     public void handle(HttpExchange httpExchange) throws IOException {
+        String cookieStr = httpExchange.getRequestHeaders().getFirst("Cookie");
+        LoginHandler.getUsersSessions().remove(cookieStr);
+
         String cookie = "sessionId=\"\"; max-age=0;";
         httpExchange.getResponseHeaders().add("Set-Cookie",cookie);
 
