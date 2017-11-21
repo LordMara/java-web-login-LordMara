@@ -5,5 +5,5 @@
 {% block content %}
     <h1>Hello {{ user.name }} {{ user.surname }}!</h1>
 
-    <button type="submit" name="logout">Log out</button>
+    <button type="submit" name="logout" onclick="window.location.href='/logout'">Log out</button>
 {% endblock %}
