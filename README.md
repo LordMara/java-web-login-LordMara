@@ -1,4 +1,4 @@
-# java-web-login-LordMara
+# java-web-login
 
 Your task is to create a login form. If a user logs in he should see `Hello <name>!`. 
 Information about users state (logged in/out) should be stored in the session. 
